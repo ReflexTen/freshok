@@ -1,9 +1,10 @@
 $(function () {
 
   $('.header__slider').slick({
-    prevArrow: '<button type="button" class="slick-prev"><img src="images/icon-arrow-left.svg" alt="стрелка влево"></button>',
-    nextArrow: '<button type="button" class="slick-next"><img src="images/icon-arrow-right.svg" alt="стрелка вправо"></button>'
+    prevArrow: '<button type="button" class="slick-prev"><svg class="icon-arrow icon-arrow--left"><use xlink:href="images/sprite.svg#icon-arrow-left"></use></svg></button>',
+    nextArrow: '<button type="button" class="slick-next"><svg class="icon-arrow icon-arrow--right"><use xlink:href="images/sprite.svg#icon-arrow-right"></use></svg></button>'
   })
 
+  var mixer = mixitup('.products');
 
 })

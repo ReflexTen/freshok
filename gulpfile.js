@@ -6,7 +6,8 @@ const uglify       = require('gulp-uglify');
 const imagemin     = require('gulp-imagemin');
 const del          = require('del');
 const svgSprite    = require('gulp-svg-sprite');
-const cheerio = require('gulp-cheerio');
+const cheerio      = require('gulp-cheerio');
+const replace      = require('gulp-replace');
 const browserSync  = require('browser-sync').create();
 
 
@@ -35,6 +36,9 @@ function styles() {
 function scripts() {
   return src([
     'node_modules/jquery/dist/jquery.js',
+    'node_modules/slick-carousel/slick/slick.js',
+    'node_modules/mixitup/dist/mixitup.js',
+  
     'app/js/main.js'
   ])
   .pipe(concat('main.min.js'))
@@ -65,22 +69,22 @@ function images() {
 
 function svgSprites() {
   return src('app/images/icons/*.svg')
-  // .pipe(cheerio({
-  //   run: ($) => {
-  //     $("[fill]").removeAttr("fill");
-  //     $("[stroke]").removeAttr("stroke");
-  //     $("[style]").removeAttr("style");
-  //   },
-  //   parserOptions: {
-  //     xmlMode: true
-  //   },
-  // }))
-  // .pipe(replace('&gt;', '>'))
+    .pipe(cheerio({
+      run: ($) => {
+        $("[fill]").removeAttr("fill");
+        $("[stroke]").removeAttr("stroke");
+        $("[style]").removeAttr("style");
+      },
+      parserOptions: {
+        xmlMode: true
+      },
+    }))
+    .pipe(replace('&gt;', '>')) 
     .pipe(
       svgSprite({
         mode: {
           stack: {
-            sprite: '../sprite.svg', 
+            sprite: '../sprite.svg',
           },
         },
       })

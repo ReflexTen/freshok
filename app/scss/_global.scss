@@ -1,0 +1,215 @@
+body {
+  @extend %opensans-400;
+  font-size: 16px;
+  line-height: 1.4;
+  color: $dark-500;
+
+}
+
+.container {
+  max-width: 1320px;
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.logo {
+  display: block;
+  outline: transparent;
+  max-width: 200px;
+  width: 100%;
+
+  &__img {
+    
+  }
+
+  &:focus {
+    box-shadow: inset 0 0 0 3px $green-100;
+    border-radius: 3px;
+  }
+}
+
+.form {
+  position: relative;
+  max-width: 576px;
+  width: 100%;
+  font-size: 14px;
+  color: $dark-800;
+
+  &__search {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 5px;
+    left: 5px;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(#fff, 0);
+    transition: background-color 0.3s;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 20px;
+      height: 20px;
+      @extend %bg;
+      background-image: url('../images/search.png');
+    }
+
+
+  }
+
+  &__field {
+    display: block;
+    width: 100%;
+    padding: 15px 0 15px 51px;
+    background-color: $white;
+    border-radius: 6px;
+    outline: transparent;
+  }
+
+  &__button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 15px 52px;
+    background-color: $dark-800;
+    border-radius: 0 6px 6px 0;
+    cursor: pointer;
+    @extend %opensans-600;
+    color: $white;
+    text-transform: uppercase;
+    outline: transparent;
+    transition: background-color 0.3s;
+
+    &:focus {
+      box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.5);
+      border-radius: 0 6px 6px 0;
+    }
+
+    &:hover {
+      background: rgba(49, 53, 43, 0.85);
+    }
+
+    &:active {
+      background-color: $dark-800;
+      border-radius: 0 6px 6px 0;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+  }
+}
+
+.section {
+  padding: 72px 0;
+}
+
+.title {
+  margin-bottom: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  @extend %ruda-600;
+  font-size: 32px;
+  letter-spacing: 0.03em;
+  color: $dark-900;
+}
+
+.btn {
+  padding: 12px 24px;
+  background-color: $green-900;
+  border-radius: 6px;
+  font-size: 18px;
+  line-height: 1.3;
+  letter-spacing: 0.03em;
+  color: $white;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: #4D810C;
+  }
+
+  &:active {
+    box-shadow: inset 0 4px 4px rgba(0, 0, 0, 0.25);
+    color: rgba($white, 0.5);
+  }
+}
+
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  padding: 14px 20px 10px;
+  background-color: rgba($white, 0.8);
+  border-radius: 6px;
+  cursor: pointer;
+  z-index: 1;
+  transform: translateY(-50%);
+  outline: transparent;
+  transition: background-color 0.3s;
+
+  &:focus {
+    box-shadow: 0 0 0 3px rgba(99, 166, 14, 0.5);
+    border-radius: 6px;
+  }
+
+  &:hover {
+    background-color: $green-200;
+
+    .icon-arrow {
+      fill: $green-900;
+    }
+  }
+
+  &:active {
+    background-color: rgba($white, 0.8);
+  }
+
+  &.slick-disabled {
+    svg {
+      fill: $silver-600;
+    }
+
+    &:hover {
+      background-color: rgba($white, 0.8);
+
+      .icon-arrow {
+        fill: $silver-600;
+      }
+    }
+  }
+}
+
+.slider-btn__left {
+  left: 60px;
+}
+
+.slider-btn__right {
+  right: 60px;
+}
+
+.icon-arrow {
+  fill: $dark-500;
+  width: 19px;
+  height: 32px;
+  transition: fill 0.3s;
+}
+
+
+
+
+
+
+
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}

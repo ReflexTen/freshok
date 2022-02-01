@@ -93,7 +93,7 @@
             <li class="user-nav__item">
               <a class="user-nav__link user-nav__link--heart" href="#">
                 <span class="user-nav__sum">
-                  12
+                  10000
                 </span>
                 <span class="sr-only">
                   Иконка понравившиеся товары
@@ -194,7 +194,7 @@
 
     </section>
 
-    <section class="privilege">
+    <section class="privilege section">
 
       <div class="container">
 
@@ -315,7 +315,7 @@
 
         </ul>
 
-        <button class="top-product btn" type="button">
+        <button class="top-product__btn btn btn--white" type="button">
           Показать еще
         </button>
       </div>
@@ -325,82 +325,83 @@
   <footer class="footer">
     <div class="footer__top">
       <div class="container">
+
         <a class="footer__logo logo" href="#">
           <img class="logo__img" src="images/logo.svg" alt="Логотип сайта">
         </a>
 
-        <div class="footer__top-inner">
+        <div class="footer__inner">
 
-          <div class="footer__top-item">
-            <p class="footer__top-text">Следите за нашими акциями</p>
+        
+            
 
-            <form class="footer__form">
+            <form class="footer__form form-subscribe">
+
+
+              <p class="form-subscribe__text">Следите за нашими акциями</p>
 
               <label class="sr-only" for="email">Поле для ввода email</label>
-              <input class="footer__form-field" type="email" name="email" id="email" required
+
+              <input class="form-subscribe__field" type="email" name="email" id="email" required
                 placeholder="email@email.com">
 
-              <button class="footer__form-button btn" type="submit">ПОДПИСАТЬСЯ</button>
+              <button class="form-subscribe__button" type="submit">Подписаться</button>
 
             </form>
 
 
-          </div>
+          <ul class="footer__list">
 
-
-
-          <ul class="footer__top-links">
-
-            <li class="footer__link-item">
+            <li class="footer__item">
               <a class="footer__link" href="">О нас</a>
             </li>
 
-            <li class="footer__link-item">
+            <li class="footer__item">
               <a class="footer__link" href="">Контакты</a>
             </li>
 
-            <li class="footer__link-item">
+            <li class="footer__item">
               <a class="footer__link" href="">Публичная оферта</a>
             </li>
 
-            <li class="footer__link-item">
+            <li class="footer__item">
               <a class="footer__link" href="">Оплата и доставка</a>
             </li>
 
-            <li class="footer__link-item">
+            <li class="footer__item">
               <a class="footer__link" href="">Вакансии</a>
             </li>
 
-            <li class="footer__link-item">
+            <li class="footer__item">
               <a class="footer__link" href="">Акции</a>
             </li>
 
-            <li class="footer__link-item">
+            <li class="footer__item">
               <a class="footer__link" href="">Отзывы</a>
             </li>
 
-            <li class="footer__link-item">
+            <li class="footer__item">
               <a class="footer__link" href="">Новости</a>
             </li>
 
           </ul>
 
-          <div class="footer__top-contact">
+          <address class="footer__info">
 
-            <ul class="footer__contact-info">
-              <li class="footer__contact-item">
-                <a class="footer__link" href="tel:+7907288365">Горячая линия+7 907 288 365</a>
+            <ul class="footer__contact contacts">
+              <li class="contacts__item">
+                <a class="contacts__link" href="tel:+7907288365">Горячая линия+7 907 288 365</a>
               </li>
 
-              <li class="footer__contact-item">
-                <a class="footer__link" href="">Санкт-Петербург, ул. Ленина, 1</a>
+              <li class="contacts__item">
+                <a class="contacts__link" href="">Санкт-Петербург, ул. Ленина, 1</a>
               </li>
             </ul>
 
-            <ul class="footer__social">
+            <ul class="footer__social social">
 
-              <li class="footer__social-item">
-                <a class="footer__social-link" href="#" style="background-image: url('images/icons/facebook.svg')"
+              <li class="social__item">
+                <a class="social__link" href="#" style="background-image: url('images/icons/facebook.svg')"
                   target="_blank">
                   <span class="sr-only">
                     ссылка на facebook
@@ -408,8 +409,8 @@
                 </a>
               </li>
 
-              <li class="footer__social-item">
-                <a class="footer__social-link" href="#" style="background-image: url('images/icons/youtube.svg')"
+              <li class="social__item">
+                <a class="social__link" href="#" style="background-image: url('images/icons/youtube.svg')"
                   target="_blank">
                   <span class="sr-only">
                     ссылка на youtube
@@ -417,8 +418,8 @@
                 </a>
               </li>
 
-              <li class="footer__social-item">
-                <a class="footer__social-link" href="#" style="background-image: url('images/icons/telegram.svg')"
+              <li class="social__item">
+                <a class="social__link" href="#" style="background-image: url('images/icons/telegram.svg')"
                   target="_blank">
                   <span class="sr-only">
                     ссылка на telegram
@@ -426,8 +427,8 @@
                 </a>
               </li>
 
-              <li class="footer__social-item">
-                <a class="footer__social-link" href="#" style="background-image: url('images/icons/instagram.svg')"
+              <li class="social__item">
+                <a class="social__link" href="#" style="background-image: url('images/icons/instagram.svg') "
                   target="_blank">
                   <span class="sr-only">
                     ссылка на instagram
@@ -435,40 +436,42 @@
                 </a>
               </li>
             </ul>
-          </div>
+
+
+          </address>
+
         </div>
       </div>
     </div>
 
 
-    <div class="footer__botom">
-      <div class="container">
-        <div class="footer__botom-inner">
+    <div class="footer__botom footer-botom">
+      <div class="footer-botom__container container">
+    
 
-          <div class="footer__copy">
-            <p>
-              © 2021 ФРЕШОК
-            </p>
-          </div>
+          <a class="footer-botom__copy" href="#">
+              © 2021 ФРЕШОК     
+          </a>
 
-          <div class="footer__pay">
-            <ul class="footer__pay-list">
-              <li class="footer__pay-item">
+    
+            <ul class="footer-botom__list">
 
-                <img class="footer__pay-link" src="images/icons/visa.svg" width="93" height="29"
+              <li class="footer-botom__item">
+                <img class="footer-botom__img" src="images/icons/visa.svg" width="93" height="29"
                   alt="Платежная система Visa">
-
               </li>
 
-              <li class="footer__pay-item">
-                <img class="footer__pay-link" src="images/icons/mc.svg" width="49" height="29"
+              <li class="footer-botom__item">
+                <img class="ffooter-botom__img" src="images/icons/mc.svg" width="49" height="29"
                   alt="Платежная система Master Cart">
               </li>
             </ul>
-          </div>
-        </div>
+        
+        
       </div>
     </div>
+
+
   </footer>
 
 

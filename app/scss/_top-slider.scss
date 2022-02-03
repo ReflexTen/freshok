@@ -1,0 +1,116 @@
+.top-slider {
+  padding: 0;
+
+  &__arrow {
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+    padding: 14px 20px;
+    transform: translateY(-50%);
+    border-radius: 6px;
+    background-color: rgba($white, 0.8);
+    outline: transparent;
+    transition: background-color 0.3s;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 19px;
+      height: 32px;
+      background-color: $dark-500;
+      transition: background-color 0.3s;
+    }
+
+    &--prew {
+      left: 60px;
+
+      &::before {
+        mask: url('../images/sprite.svg#icon-arrow-left') center / cover no-repeat;
+      }
+    }
+
+    &--next {
+      right: 60px;
+
+      &::before {
+        mask: url('../images/sprite.svg#icon-arrow-right') center / cover no-repeat;
+      }
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 3px rgba(99, 166, 14, 0.5);
+      border-radius: 6px;
+    }
+
+    &:hover {
+      background-color: $green-200;
+
+      &::before {
+        background-color: $green-900;
+      }
+    }
+
+    &:active {
+      background-color: rgba($white, 0.8);
+    }
+
+    &.slick-disabled {
+      &::before {
+        background-color: $grey;
+      }
+
+      &:hover {
+        background-color: rgba($white, 0.8);
+
+        &::before {
+          background-color: $grey;
+        }
+      }
+    }
+  }
+
+
+  &__item {
+    display: flex !important;
+    align-items: center;
+    @extend %bg;
+    height: 600px;
+  }
+
+  &__container {
+    width: 100%;
+    padding: 0 125px;
+    margin: 0 auto;
+  }
+
+  &__content {
+    max-width: 1290px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 24px 0 24px 24px;
+    box-shadow: inset 0 0 0 100vh rgba(255, 255, 255, 0.8);
+    border-radius: 4px;
+  }
+
+  &__title {
+    max-width: 800px;
+    margin-bottom: 12px;
+    font-family: "Ruda", sans-serif;
+    font-weight: 900;
+    font-size: 60px;
+    line-height: 1.3;
+    text-transform: uppercase;
+
+    span {
+      color: $red-900;
+    }
+  }
+
+  &__text {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 140%;
+    margin-bottom: 32px;
+  }
+
+}

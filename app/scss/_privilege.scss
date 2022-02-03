@@ -1,0 +1,58 @@
+.privilege {
+  padding: 48px 0 29px;
+  background-color: $silver-100;
+
+  &__inner {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__item {
+    padding-left: 74px;
+    position: relative;
+    width: 264px;
+
+    &:not(:last-child) {
+      margin-right: 65px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50px;
+      height: 50px;
+      background-color: $green-900;
+    }
+
+    &--freedelivery {
+      &::before {
+        mask: url('../images/sprite.svg#icon-scooter') center / cover no-repeat;
+      }
+    }
+
+
+    &--back {
+      &::before {
+        mask: url('../images/sprite.svg#icon-back') center / cover no-repeat;
+      }
+    }
+
+    &--support {
+      &::before {
+        mask: url('../images/sprite.svg#icon-support') center / cover no-repeat;
+      }
+    }
+  }
+
+  &__title {
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: $dark-900;
+  }
+
+  &__text {
+    font-size: 14px;
+  }
+}

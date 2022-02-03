@@ -2,6 +2,11 @@ html {
   box-sizing: border-box;
 }
 
+html,
+body {
+  height: 100%;
+}
+
 *,
 *::after,
 *::before {
@@ -40,8 +45,6 @@ h6 {
   font-size: inherit;
 }
 
-
-
 img {
   max-width: 100%;
   display: block;
@@ -58,7 +61,6 @@ select {
   margin: 0;
 }
 
-
 textarea {
   resize: vertical;
 }
@@ -70,4 +72,8 @@ button {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+address {
+  font-style: normal;
 }

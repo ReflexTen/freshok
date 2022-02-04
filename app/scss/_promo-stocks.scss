@@ -1,0 +1,126 @@
+.promo-stocks {
+
+  &__inner {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 30px;
+    margin-bottom: 45px;
+  }
+
+
+  .product-card {
+    flex-direction: row;
+    padding: 13px 12px 12px 11px;
+
+
+    &__img-link {
+      max-width: 100px;
+      width: 100%;
+      max-height: 100px;
+      height: 100%;
+
+      &::after {
+        display: none;
+      }
+    }
+
+    &__info {
+      width: 100%;
+      padding: 0 0 0 12px;
+    }
+
+    &__bottom {
+      flex-direction: column;
+    }
+
+    &__worth {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+    }
+
+    &__rating {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 1;
+      color: $dark-500;
+
+      &::after {
+        content: '';
+        display: block;
+        width: 16px;
+        height: 16px;
+        mask: url('../images/sprite.svg#star') center / cover no-repeat;
+        background-color: $yellow-900;
+      }
+    }
+
+  }
+
+  .badges {
+    top: 13px;
+    left: 12px;
+    z-index: 1;
+  }
+
+  .prices {
+    flex-direction: row-reverse;
+    align-items: end;
+
+    &__item {}
+
+    &__item--old {
+      margin-right: 10px;
+    }
+
+    &__item--new {
+      margin-right: 12px;
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 1;
+      color: $dark-500;
+
+      span {
+        font-size: 15px;
+      }
+    }
+  }
+
+  .balance {
+    // margin-bottom: 5px;
+    font-weight: 600;
+    font-size: 10px;
+    line-height: 100%;
+    text-transform: uppercase;
+
+    &__item {
+      display: none;
+
+      &--more {
+        color: $green-900;
+      }
+
+      &--less {
+        color: $red-900;
+      }
+
+      &--missing {
+        color: $grey;
+      }
+
+      &--on {
+        display: block;
+      }
+    }
+
+  }
+
+  &__btn {
+    display: block;
+    margin: 0 auto;
+  }
+}

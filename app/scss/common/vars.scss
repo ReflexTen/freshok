@@ -1,3 +1,4 @@
+$green-1000: #4D800C;
 $green-900: #63A60F;
 $green-200: #E0EDCF;
 $green-100: #EFF6E7;
@@ -12,8 +13,7 @@ $silver-100: #F6F6F6;
 $white: #FFFFFF;
 $grey: #C1C1C1;
 
-
-%bg{
+%bg {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -34,4 +34,3 @@ $grey: #C1C1C1;
     -webkit-box-orient: vertical;
   }
 }
-

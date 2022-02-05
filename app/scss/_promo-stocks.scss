@@ -1,4 +1,5 @@
 .promo-stocks {
+  background-color: $silver-100;
 
   &__inner {
     display: grid;
@@ -7,11 +8,10 @@
     margin-bottom: 45px;
   }
 
-
   .product-card {
     flex-direction: row;
     padding: 13px 12px 12px 11px;
-
+    background-color: $white;
 
     &__img-link {
       max-width: 100px;
@@ -43,7 +43,7 @@
     &__rating {
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      align-items: flex-end;
       font-weight: bold;
       font-size: 14px;
       line-height: 1;
@@ -71,8 +71,6 @@
     flex-direction: row-reverse;
     align-items: end;
 
-    &__item {}
-
     &__item--old {
       margin-right: 10px;
     }
@@ -91,7 +89,6 @@
   }
 
   .balance {
-    // margin-bottom: 5px;
     font-weight: 600;
     font-size: 10px;
     line-height: 100%;

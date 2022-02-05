@@ -56,7 +56,6 @@
     position: relative;
     transition: all 0.3s;
 
-
     &::after {
       content: '';
       position: absolute;
@@ -126,19 +125,16 @@
     @include line-clamp(3);
   }
 
-  &__link {}
-
   &__bottom {
     display: flex;
     justify-content: space-between;
   }
 
-  &__prices {}
-
   &__cart {
     padding: 8px;
     background-color: $green-900;
     border-radius: 3px;
+    outline: transparent;
     transition: background-color 0.3s;
 
     &::before {
@@ -219,8 +215,6 @@
   line-height: 1;
   color: $dark-500;
 
-  &__item {}
-
   &__item--old {
     position: relative;
     color: $silver-600;
@@ -238,5 +232,4 @@
     }
   }
 
-  &__item--new {}
 }

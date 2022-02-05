@@ -1,0 +1,69 @@
+.banners-list {
+  padding-top: 0;
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+  }
+
+}
+
+
+
+.banner {
+  max-width: 300px;
+  width: 100%;
+  padding: 79px 0 79px 32px;
+  @extend %bg;
+  border-radius: 6px;
+  color: $dark-500;
+  text-transform: uppercase;
+
+  &:not(:last-child) {
+    margin-right: 20px;
+  }
+
+  &--bigger {
+    max-width: 630px;
+    color: $white;
+  }
+
+  &__text {
+    margin-bottom: 18px;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 1;
+    letter-spacing: 0.1em;
+
+    &--shadow {
+      text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.25);
+    }
+  }
+
+  &__title {
+    max-width: 170px;
+    margin-bottom: 6px;
+    font-family: "Ruda", sans-serif;
+    font-weight: 600;
+    font-size: 30px;
+
+    &--shadow {
+      max-width: 360px;
+      text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.25);
+    }
+  }
+
+  &__link {
+    padding-bottom: 6px;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 1;
+    border-bottom: 2px solid $dark-500;
+
+    &--shadow {
+      text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.25);
+      border-color: $white;
+    }
+  }
+
+}

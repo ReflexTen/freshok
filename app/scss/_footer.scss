@@ -2,24 +2,79 @@
   background-color: $dark-800;
   font-size: 14px;
   color: $white;
+  letter-spacing: normal;
 
   &__top {
-    padding: 30px 0;
+    padding: 33px 0;
+
+    @include media-4 {
+      padding: 24px 0;
+    }
   }
 
   &__logo {
-    margin-bottom: 30px;
+    margin-bottom: 25px;
+
+    @include media-2 {
+      margin: 0 auto 25px;
+    }
   }
 
   &__inner {
     display: flex;
     justify-content: space-between;
+
+    @include media-2 {
+      flex-direction: column-reverse;
+    }
   }
 
   &__list {
+    position: relative;
     column-count: 3;
     column-gap: 77px;
-    padding-left: 70px;
+
+    @include media-1 {
+      column-gap: 50px;
+    }
+
+    @include media-2 {
+      text-align: left;
+      padding-left: 50px;
+      column-width: 120px;
+      margin-bottom: 36px;
+      margin: 0 auto 36px;
+
+      &::after {
+        content: '';
+        position: absolute;
+        display: block;
+        left: -15px;
+        bottom: -12px;
+        width: calc(100% + 30px);
+        height: 1px;
+        background-color: rgba(#fff, 0.1);
+      }
+    }
+
+    @include media-4 {
+      column-gap: normal;
+    }
+  }
+
+  &__item {
+    margin-bottom: 13px;
+    padding: 4px;
+    overflow: hidden;
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+    break-inside: avoid;
+    break-inside: avoid-column;
+
+    @include media-3 {
+      margin-bottom: 10px;
+
+    }
   }
 
   &__link {
@@ -40,18 +95,40 @@
     }
   }
 
-  &__item {
-    margin-bottom: 18px;
-  }
+  .social {
+    width: 100%;
 
+    @include media-2 {
+      position: relative;
+      justify-content: center;
+      margin-bottom: 45px;
+
+      &::after {
+        content: '';
+        position: absolute;
+        display: block;
+        bottom: -24px;
+        width: calc(100% + 30px);
+        height: 1px;
+        background-color: rgba(#fff, 0.1);
+      }
+    }
+  }
 }
 
-
 .form-subscribe {
+  height: 100%;
+  margin-right: 70px;
   position: relative;
-  width: 306px;
+  max-width: 306px;
+  width: 100%;
   font-size: 14px;
   color: $dark-800;
+
+  @include media-2 {
+    margin-right: 40px;
+    margin: 0 auto;
+  }
 
   &__text {
     color: $white;
@@ -63,11 +140,16 @@
     padding: 12px;
     background-color: $white;
     border-radius: 6px;
+
+    @include media-4 {
+      padding: 10px;
+    }
   }
 
   &__button {
     position: absolute;
     right: 0;
+    bottom: 0;
     padding: 14px 16px;
     background-color: $green-900;
     border-radius: 0 6px 6px 0;
@@ -79,6 +161,15 @@
     outline: transparent;
     transition: background-color 0.3s,
       box-shadow 0.3s;
+
+    @include media-4 {
+      padding: 12px 16px;
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.5);
+      border-radius: 0 6px 6px 0;
+    }
 
     &:hover {
       background-color: #4D810C;
@@ -92,6 +183,10 @@
 }
 
 .contacts {
+  @include media-2 {
+    text-align: center;
+  }
+
 
   &__item {
     margin-bottom: 18px;
@@ -134,8 +229,29 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+
+    @include media-4 {
+      flex-direction: column-reverse;
+    }
   }
 
+  &__copy {
+    outline: transparent;
+
+    &:focus {
+      box-shadow: 0 0 0 3px #EFF6E7;
+      border-radius: 3px;
+    }
+
+    &:hover {
+      opacity: 0.7;
+    }
+
+    &:active {
+      color: $green-200;
+    }
+  }
 
   &__list {
     display: flex;
@@ -144,6 +260,10 @@
   &__item {
     &:not(:last-child) {
       margin-right: 24px;
+
+      @include media-4 {
+        margin-bottom: 24px;
+      }
     }
   }
 }

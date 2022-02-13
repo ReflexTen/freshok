@@ -3,7 +3,9 @@
   align-items: center;
 
   &__item {
-    margin-right: 12px;
+    &:not(:last-child) {
+      margin-right: 12px;
+    }
   }
 
   &__link {
@@ -23,6 +25,7 @@
     }
 
     &:active {
+      box-shadow: none;
       filter: invert(7%) sepia(20%) saturate(218%) hue-rotate(37deg) brightness(99%) contrast(91%);
     }
   }

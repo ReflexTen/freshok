@@ -1,5 +1,6 @@
 .top-slider {
   padding: 0;
+  letter-spacing: normal;
 
   &__arrow {
     position: absolute;
@@ -24,6 +25,10 @@
     &--prew {
       left: 60px;
 
+      @include media-2 {
+        left: 15px;
+      }
+
       &::before {
         mask: url('../images/sprite.svg#icon-arrow-left') center / cover no-repeat;
       }
@@ -31,6 +36,10 @@
 
     &--next {
       right: 60px;
+
+      @include media-2 {
+        right: 15px;
+      }
 
       &::before {
         mask: url('../images/sprite.svg#icon-arrow-right') center / cover no-repeat;
@@ -69,27 +78,60 @@
     }
   }
 
-
-  &__item {
-    display: flex !important;
+  &__block {
+    position: relative;
+    display: flex;
     align-items: center;
     @extend %bg;
     height: 600px;
+
+    @include media-2 {
+      height: 500px;
+
+    }
+
+    @include media-3 {
+      height: 400px;
+    }
+
+    @include media-4 {
+      height: 320px;
+    }
   }
 
   &__container {
     width: 100%;
     padding: 0 125px;
     margin: 0 auto;
+
+    @include media-2 {
+      padding: 0 90px;
+    }
+
+    @include media-3 {
+      padding: 0;
+    }
   }
 
   &__content {
     max-width: 1290px;
     width: 100%;
     margin: 0 auto;
-    padding: 24px 0 24px 24px;
+    padding: 24px;
     box-shadow: inset 0 0 0 100vh rgba(255, 255, 255, 0.8);
     border-radius: 4px;
+
+    @include media-3 {
+      border-radius: 0;
+      padding: 15px;
+      margin-top: 8px;
+    }
+
+    .btn {
+      @include media-2 {
+        font-size: 14px;
+      }
+    }
   }
 
   &__title {
@@ -101,6 +143,23 @@
     line-height: 1.3;
     text-transform: uppercase;
 
+    @include media-2 {
+      font-size: 40px;
+      max-width: 500px;
+    }
+
+    @include media-3 {
+      font-size: 30px;
+      max-width: 400px;
+    }
+
+    @include media-4 {
+      margin-bottom: 15px;
+      font-weight: 700;
+      font-size: 20px;
+      max-width: 250px;
+    }
+
     span {
       color: $red-900;
     }
@@ -111,6 +170,46 @@
     font-size: 16px;
     line-height: 140%;
     margin-bottom: 32px;
+
+    @include media-4 {
+      margin-bottom: 24px;
+    }
+  }
+}
+
+.slick-dots {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+
+  & li:not(:last-child) {
+    margin-right: 13px;
+  }
+
+  & button {
+    font-size: 0;
+    width: 20px;
+    height: 20px;
+    border: 1px solid $grey;
+    border-radius: 50%;
+    background-color: $white;
+    transition: background-color 0.3s, border-color 0.3s;
+    cursor: pointer;
+
+    @include media-4 {
+      width: 10px;
+      height: 10px;
+    }
+  }
+
+  & .slick-active {
+    & button {
+      background-color: $green-900;
+      border-color: $green-900;
+    }
   }
 
 }

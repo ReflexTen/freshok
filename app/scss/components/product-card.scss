@@ -23,6 +23,11 @@
     height: 44px;
     outline: transparent;
 
+    @include media-4 {
+      top: 6px;
+      right: 0px;
+    }
+
     &::before {
       content: "";
       display: block;
@@ -30,14 +35,17 @@
       height: 29px;
       mask: url('../images/sprite.svg#icon-heart') center / cover no-repeat;
       background-color: $grey;
-      transition: background-color 0.3s,
-        opacity 0.3s;
+      transition: background-color 0.3s;
+
+      @include media-4 {
+        width: 24px;
+        height: 21px;
+      }
     }
 
     &:focus {
       box-shadow: 0 0 0 3px $green-200;
       border-radius: 3px;
-
     }
 
     &:hover {
@@ -48,13 +56,30 @@
 
     &:active {
       opacity: 0.5;
+      box-shadow: none;
     }
-
   }
 
   &__img-link {
     position: relative;
-    transition: all 0.3s;
+    display: block;
+    width: 100%;
+    padding-bottom: 72.15%;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      display: block;
+      width: 48px;
+      height: 48px;
+      background-image: url('../../images/icons/loup-0card.svg');
+      transform: translateY(-50%) translateX(-50%);
+      opacity: 0;
+      z-index: 5;
+      transition: opacity 0.3s;
+    }
 
     &::after {
       content: '';
@@ -67,46 +92,43 @@
       height: 100%;
       background-color: rgba(0, 0, 0, 0.1);
       @extend %bg;
+      transition: opacity 0.3s;
     }
 
-    &:hover {
+    &:focus {
+      &::before {
+        opacity: 1;
+      }
 
       &::after {
         opacity: 1;
       }
+    }
 
-      .product-card__loup {
+    &:hover {
+      &::before {
+        opacity: 1;
+      }
+
+      &::after {
         opacity: 1;
       }
     }
-
   }
 
-  &__loup {
+  &__img {
     position: absolute;
-    transform: translateY(-50%) translateX(-50%);
-    top: 50%;
-    left: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 14px;
-    border-radius: 50%;
-    background-color: $white;
-    opacity: 0;
-    z-index: 5;
-    transition: opacity 0.3s;
-
-    &::before {
-      content: '';
-      display: block;
-      width: 20px;
-      height: 20px;
-      mask: url('../images/sprite.svg#icon-search') center / cover no-repeat;
-      background-color: $green-900;
-    }
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
   }
 
+  &__link {
+    width: fit-content;
+    @include line-clamp(3);
+  }
 
   &__info {
     height: 100%;
@@ -114,6 +136,10 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    @include media-4 {
+      padding: 12px;
+    }
   }
 
   &__title {
@@ -122,7 +148,10 @@
     font-size: 14px;
     line-height: 1.4;
     color: $dark-900;
-    @include line-clamp(3);
+
+    @include media-4 {
+      margin-bottom: 50px;
+    }
   }
 
   &__bottom {
@@ -164,7 +193,6 @@
         opacity: 0.5;
       }
     }
-
   }
 }
 
@@ -188,22 +216,22 @@
     &:not(:last-child) {
       margin-bottom: 6px;
     }
-  }
 
-  &__item--new {
-    background-color: $green-900;
-  }
+    &--new {
+      background-color: $green-900;
+    }
 
-  &__item--on {
-    display: block;
-  }
+    &--on {
+      display: block;
+    }
 
-  &__item--sale {
-    background-color: $red-900;
-  }
+    &--sale {
+      background-color: $red-900;
+    }
 
-  &__item--hit {
-    background-color: $orange-900;
+    &--hit {
+      background-color: $orange-900;
+    }
   }
 }
 
@@ -215,20 +243,50 @@
   line-height: 1;
   color: $dark-500;
 
-  &__item--old {
-    position: relative;
-    color: $silver-600;
-    width: fit-content;
+  &__item {
+    &--old {
+      position: relative;
+      color: $silver-600;
+      width: fit-content;
 
-    &::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 100%;
-      height: 1px;
-      background-color: $silver-600;
-      transform: rotate(-15deg) translateY(7px);
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 1px;
+        background-color: $silver-600;
+        transform: rotate(-15deg) translateY(7px);
+      }
+    }
+  }
+}
+
+.balance {
+  margin-bottom: 4px;
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 100%;
+  text-transform: uppercase;
+
+  &__item {
+    display: none;
+
+    &--more {
+      color: $green-900;
+    }
+
+    &--less {
+      color: $red-900;
+    }
+
+    &--missing {
+      color: $grey;
+    }
+
+    &--on {
+      display: block;
     }
   }
 

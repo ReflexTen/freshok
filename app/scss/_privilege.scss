@@ -1,19 +1,45 @@
 .privilege {
   padding: 48px 0 29px;
   background-color: $silver-100;
+  letter-spacing: normal;
+
+  @include media-2 {
+    padding: 30px;
+  }
+
+  @include media-4 {
+    padding: 32px 0;
+  }
 
   &__inner {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    max-width: 922px;
+    width: 100%;
+    margin: 0 auto;
+
+    @include media-3 {
+      flex-direction: column;
+    }
   }
 
   &__item {
     padding-left: 74px;
     position: relative;
-    width: 264px;
+    max-width: 264px;
+    width: 100%;
 
     &:not(:last-child) {
-      margin-right: 65px;
+      margin-right: 10px;
+
+      @include media-3 {
+        margin: 0 auto 30px;
+      }
+    }
+
+    @include media-3 {
+      max-width: 340px;
+      margin: 0 auto;
     }
 
     &::before {
@@ -31,7 +57,6 @@
         mask: url('../images/sprite.svg#icon-scooter') center / cover no-repeat;
       }
     }
-
 
     &--back {
       &::before {

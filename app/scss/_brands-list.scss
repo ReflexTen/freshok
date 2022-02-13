@@ -1,21 +1,36 @@
 .brands-list {
 
+  @include media-4 {
+    padding: 48px 0 41px;
+  }
+
   &__container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 71px;
+
+    @include media-2 {
+      padding: 0 61px;
+    }
+
+    @include media-3 {
+      padding: 0 5px;
+    }
   }
 
   &__item {
     opacity: 0.5;
-    cursor: pointer;
     transition: opacity 0.3s;
 
     &:hover {
       opacity: 1;
     }
 
+  }
+
+  &__img {
+    margin: 0 auto;
   }
 
 }

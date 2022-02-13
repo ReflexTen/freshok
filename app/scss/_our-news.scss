@@ -1,23 +1,41 @@
 .our-news {
   padding-top: 0;
+  letter-spacing: normal;
+
+  @include media-4 {
+    padding-bottom: 46px;
+  }
 
   &__top {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 25px;
+    margin-bottom: 21px;
+
+    @include media-4 {
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 24px;
+
+    }
   }
 
   &__title {
-    margin-bottom: 0px;
+    margin-bottom: 0;
+
+    @include media-4 {
+      margin-bottom: 9px;
+    }
   }
 
-  &__link {
+  &__top-link {
+    padding-bottom: 4px;
     font-weight: 700;
     font-size: 14px;
     line-height: 1.3;
     color: $green-900;
     text-transform: uppercase;
+    letter-spacing: 0.03em;
     border-bottom: 2px solid $green-900;
     outline: transparent;
     transition: color 0.3s, border-color 0.3s;
@@ -34,7 +52,7 @@
 
     &:active {
       color: $green-900;
-      outline: transparent;
+      box-shadow: none;
       border-color: $green-200;
     }
   }
@@ -42,24 +60,45 @@
   &__list {
     display: flex;
     justify-content: space-between;
-  }
 
-}
-
-.news {
-  position: relative;
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.25);
-  border-radius: 6px;
-  transition: color 0.3s;
-
-  &:not(:last-child) {
-    margin-right: 10px;
-  }
-
-  &:hover {
-    .news__text {
-      color: $green-900;
+    @include media-3 {
+      flex-direction: column;
     }
+  }
+
+  &__item {
+    position: relative;
+    max-width: 410px;
+    width: 100%;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.25);
+    border-radius: 6px;
+    border: 1px solid $grey;
+    transition: color 0.3s;
+
+    @include media-3 {
+      margin: 0 auto;
+    }
+
+    &:not(:last-child) {
+      margin-right: 10px;
+
+      @include media-3 {
+        margin: 0 auto 10px;
+      }
+    }
+
+    &:hover {
+      .our-news {
+        &__text {
+          color: $green-900;
+        }
+      }
+    }
+  }
+
+  &__link {
+    display: block;
+    height: 100%;
   }
 
   &__date {
@@ -79,24 +118,48 @@
     font-size: 10px;
     letter-spacing: 0.1em;
     color: $dark-900;
+  }
 
-    span {
-      font-family: "Ruda", sans-serif;
-      font-size: 30px;
-      line-height: 1;
-    }
+  &__number {
+    font-family: "Ruda", sans-serif;
+    font-size: 30px;
+    line-height: 1;
   }
 
   &__img {
     border-radius: 6px 6px 0 0;
+    object-fit: contain;
+
+    @include media-1 {
+      width: 100%;
+      object-fit: cover;
+    }
+
+    @include media-4 {
+      width: 100%;
+      height: 200px;
+    }
   }
 
   &__text {
-    max-width: 410px;
-    padding: 18px;
+    padding: 18px 18px 0 18px;
+    margin-bottom: 18px;
     font-weight: 600;
     line-height: 1.5;
     color: $dark-900;
     transition: color 0.3s;
+    @include line-clamp(3);
+
+    @include media-2 {
+      font-size: 14px;
+    }
+
+    @include media-3 {
+      padding: 15px 15px 0 15px;
+      margin-bottom: 15px;
+      font-size: 14px;
+    }
+
   }
+
 }

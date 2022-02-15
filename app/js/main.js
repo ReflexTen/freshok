@@ -60,21 +60,20 @@ $(function () {
     $('body').removeClass('lock');
   })
 
-  //  $('.form-search__btn').on('click', function () {
-  //    $('.form-search').removeClass('form-search--active');
+//---------------------------------------------------//
 
-  //  })
+  $('.sidebar__title::after').on('click', function () {
+    $('.sidebar__list').toggleClass('sidebar__list--active');
+  })
 
-  // $('.user-nav__link--search').on('click', function () {
-  //   $('.form-search').fadeToggle(200);
-  //   return false;
-  // })
 
-  // $('.form-search__btn').on('click', function () {
-  //   $('.form-search').fadeOut(200);
 
-  // })
 
+
+
+
+
+ 
 
   var containerEl1 = document.querySelector('[data-ref="mix1"]');
   var containerEl2 = document.querySelector('[data-ref="mix2"]');
@@ -88,18 +87,20 @@ $(function () {
   var mixer1 = mixitup(containerEl1, config);
   var mixer1 = mixitup(containerEl2, config);
 
-
-  // var config = {
-  //   controls: {
-  //     scope: 'local'
-  //   }
-  // }
-
-  // var mixer = mixitup('.top-product__inner, config');
-  // var mixer = mixitup('.promo-stocks__inner, config');
-
-
-
-
-
 })
+
+
+ //  $('.form-search__btn').on('click', function () {
+ //    $('.form-search').removeClass('form-search--active');
+
+ //  })
+
+ // $('.user-nav__link--search').on('click', function () {
+ //   $('.form-search').fadeToggle(200);
+ //   return false;
+ // })
+
+ // $('.form-search__btn').on('click', function () {
+ //   $('.form-search').fadeOut(200);
+
+ // })

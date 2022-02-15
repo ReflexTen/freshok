@@ -1,0 +1,36 @@
+.breadcrumbs {
+  padding: 24px 0;
+  background-color: $silver-100;
+  font-size: 14px;
+  line-height: 1.2;
+
+  &__inner {
+    display: flex;
+  }
+
+  &__item {
+    position: relative;
+    padding-right: 16px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 3px;
+      right: 4px;
+      width: 6px;
+      height: 10px;
+      mask: url('../images/sprite.svg#icon-chevron') center / cover no-repeat;
+      background-color: $grey;
+    }
+
+    &:last-child {
+      padding-right: 0;
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  &__link {}
+}

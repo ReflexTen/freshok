@@ -1,0 +1,152 @@
+.catalog {
+
+  &__title {
+    text-align: left;
+    font-weight: 700;
+    text-transform: none;
+    font-size: 42px;
+    line-height: 1.2;
+
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__sidebar {}
+}
+
+
+.sidebar {
+
+  &__item {
+    max-width: 300px;
+    width: 100%;
+    border: 1px solid $grey;
+    border-radius: 6px;
+
+
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__categories {
+    // height: 364px;
+  }
+
+  &__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 24px 18px 18px;
+    font-family: "Ruda", sans-serif;
+    font-size: 24px;
+    line-height: 1.2;
+    color: $dark-900;
+    border-bottom: 1px solid $grey;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 18px;
+      height: 11px;
+      mask: url('../images/sprite.svg#icon-chevron-catalog') center / cover no-repeat;
+      cursor: pointer;
+      background-color: $grey;
+    }
+  }
+
+  &__list {
+    padding: 18px;
+    overflow-y: auto;
+    height: 299px;
+  }
+
+  &__list-item {
+    &:not(:last-child) {
+      margin-bottom: 12px;
+    }
+  }
+
+  &__list-link {
+    font-size: 18px;
+    line-height: 1.3;
+  }
+
+  &__offer {}
+
+  &__form {
+    padding: 18px;
+  }
+
+  &__checkbox {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+
+    &:checked {
+
+      &+.sidebar {
+        &__label {
+          &::before {
+            border-color: $dark-500;
+          }
+
+          &::after {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+
+  &__label {
+    position: relative;
+    display: block;
+    padding-left: 36px;
+
+    &:not(:last-child) {
+      margin-bottom: 12px;
+    }
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      display: block;
+      transition: border-color 0.3s, opacity 0.3s;
+    }
+
+
+    &::before {
+      left: 0;
+      width: 24px;
+      height: 24px;
+      background-color: $silver-100;
+      border: 1px solid $grey;
+      border-radius: 3px;
+    }
+
+    &::after {
+      top: 8px;
+      left: 7px;
+      width: 12px;
+      height: 9px;
+      mask: url('../images/sprite.svg#icon-arrow-checkbox') center / cover no-repeat;
+      background-color: $dark-500;
+      opacity: 0;
+    }
+  }
+
+  &__brend {}
+
+  &__price {}
+
+  &__input {}
+}
+
+// .sidebar__checkbox:checked + .sidebar__label::before{
+//   background-color: red;
+// }

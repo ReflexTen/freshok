@@ -142,6 +142,17 @@
     }
   }
 
+  &__status {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 4px;
+
+    @include media-3 {
+      margin-bottom: 0;
+    }
+  }
+
   &__title {
     margin-bottom: 9px;
     font-weight: 600;
@@ -191,6 +202,30 @@
 
       &::before {
         opacity: 0.5;
+      }
+    }
+  }
+
+  &__rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 1;
+    color: $dark-500;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 16px;
+      height: 16px;
+      mask: url('../images/sprite.svg#star') center / cover no-repeat;
+      background-color: $yellow-900;
+
+      @include media-3 {
+        width: 12px;
+        height: 12px;
       }
     }
   }

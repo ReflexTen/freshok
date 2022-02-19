@@ -94,25 +94,6 @@
       align-items: end;
       flex-wrap: wrap;
     }
-
-    &__rating {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      font-weight: bold;
-      font-size: 14px;
-      line-height: 1;
-      color: $dark-500;
-
-      &::after {
-        content: '';
-        display: block;
-        width: 16px;
-        height: 16px;
-        mask: url('../images/sprite.svg#star') center / cover no-repeat;
-        background-color: $yellow-900;
-      }
-    }
   }
 
   .badges {

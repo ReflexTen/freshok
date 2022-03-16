@@ -394,19 +394,19 @@
     }
   }
 
-  &__vendor {
-    margin-right: 7px;
-    padding: 4px 5px;
-    background: $silver-100;
-    border-radius: 3px;
-    font-size: 14px;
-    line-height: 1.2;
-    color: $grey;
+  // &__vendor {
+  //   margin-right: 7px;
+  //   padding: 4px 5px;
+  //   background: $silver-100;
+  //   border-radius: 3px;
+  //   font-size: 14px;
+  //   line-height: 1.2;
+  //   color: $grey;
 
-    @include media-4 {
-      margin-right: 12px;
-    }
-  }
+  //   @include media-4 {
+  //     margin-right: 12px;
+  //   }
+  // }
 
   &__raiting {
     z-index: 1;

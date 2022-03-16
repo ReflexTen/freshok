@@ -1,5 +1,5 @@
 .catalog {
-  padding: 48px 0 70px 0;
+  padding: 48px 0 75px 0;
 
   @include media-3 {
     padding: 30px 0 37px 0;
@@ -22,15 +22,21 @@
   &__inner {
     display: flex;
     justify-content: space-between;
+
+    @include media-2 {
+      justify-content: center;
+    }
   }
 
   &__filter {
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    margin-bottom: 46px;
 
     @include media-2 {
       justify-content: flex-start;
+      margin-bottom: 30px;
     }
   }
 
@@ -40,7 +46,7 @@
 
   &__select-form {
     &:focus {
-      box-shadow: 0px 0px 0px 3px $green-200;
+      box-shadow: 0 0 0 3px $green-200;
       border-radius: 3px;
     }
   }
@@ -117,40 +123,70 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
-    padding: 48px 0 53px;
+    margin-bottom: 49px;
+
+    @include media-1 {
+      gap: 10px;
+    }
 
     @include media-3 {
-      grid-template-columns: repeat(2, 1fr);
-      padding: 30px 0 24px;
+      grid-template-columns: repeat(3, 1fr);
+      margin-bottom: 24px;
     }
 
     @include media-4 {
+      grid-template-columns: repeat(2, 1fr);
       gap: 5px;
     }
 
     &--row {
       grid-template-columns: repeat(2, 1fr);
-      padding-top: 43px;
     }
   }
 
   .product-card {
-    padding-top: 53px;
+    padding-top: 57px;
     max-width: 300px;
     width: 100%;
     z-index: 0;
 
-    &__info {
-      padding: 0px 18px 18px 18px;
+    &__img-link {
+      z-index: -1;
+    }
+
+    &__status {
+      margin-top: -7px;
+      margin-bottom: 7px;
 
       @include media-3 {
-        padding: 0px 10px 13px 10px
+        margin-top: -10px;
+        margin-bottom: 6px;
+      }
+    }
+
+    &__info {
+      padding: 0 18px 18px 18px;
+
+      @include media-3 {
+        padding: 0 10px 13px 10px
       }
     }
 
     &__rating {
       @include media-3 {
         font-size: 10px;
+      }
+
+      &::after {
+        @include media-3 {
+          margin-left: 5px;
+        }
+      }
+    }
+
+    &__prices {
+      span {
+        margin-left: 7px;
       }
     }
 
@@ -169,11 +205,22 @@
 
         &__info {
           width: 100%;
-          padding: 11px 19px 12px 2px;
+          padding: 12px 19px 11px 2px;
         }
 
         &__status {
-          margin-bottom: 10px;
+          align-items: center;
+          margin-top: 0;
+          margin-bottom: 12px;
+        }
+
+        &__rating {
+
+          &::after {
+
+            margin-left: 5px;
+
+          }
         }
 
         &__top {
@@ -227,7 +274,7 @@
   @include media-2 {
     position: fixed;
     top: 0;
-    left: 0px;
+    left: 0;
     padding: 30px 20px 20px 5px;
     transform: translateX(-200%);
     background-color: $white;
@@ -240,21 +287,19 @@
     transform: translateX(0);
   }
 
-  .mob-menu {
-    &__btn {
-      display: none;
-      padding: 5px;
-      margin: 0 0 0 auto;
-      margin-bottom: 30px;
-      text-align: right;
+  &__btn-closed {
+    display: none;
+    padding: 5px;
+    margin: 0 0 0 auto;
+    margin-bottom: 30px;
+    text-align: right;
 
-      @include media-2 {
-        display: block;
-      }
+    @include media-2 {
+      display: block;
     }
   }
 
-  &__item {
+  &__box {
     width: 300px;
     border: 1px solid $grey;
     border-radius: 6px;
@@ -262,104 +307,67 @@
     &:not(:last-child) {
       margin-bottom: 30px;
     }
-  }
 
-  &__top {
-    position: relative;
-  }
+    &--price {
+      .sidebar {
+        &__btn {
+          padding: 15px 24px 13px 18px;
+        }
 
-  &__title {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 18px 24px 18px 18px;
-    font-family: "Ruda", sans-serif;
-    font-size: 24px;
-    line-height: 1.2;
-    color: $dark-900;
-    border-bottom: 1px solid $grey;
-  }
-
-  &__title-price {
-    padding: 18px 24px 12px 18px;
+        &__list {
+          padding: 22px 16px 5px;
+        }
+      }
+    }
   }
 
   &__btn {
-    position: absolute;
-    top: 24px;
-    right: 24px;
-    display: block;
-    width: 18px;
-    height: 11px;
-    mask: url('../images/sprite.svg#icon-chevron-catalog') center / cover no-repeat;
-    cursor: pointer;
-    background-color: $grey;
-    transition: transform 0.3s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 18px 24px 18px 18px;
+    font-family: "Ruda", sans-serif;
+    letter-spacing: 0.03em;
+    font-size: 24px;
+    line-height: 1.2;
+    color: $dark-900;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 18px;
+      height: 11px;
+      mask: url('../images/sprite.svg#icon-chevron-catalog') center / cover no-repeat;
+      cursor: pointer;
+      background-color: $grey;
+      transition: transform 0.3s;
+    }
 
     &--active {
-      transform: rotate(180deg);
+      &::after {
+        transform: rotate(180deg);
+      }
     }
   }
 
   &__list {
     padding: 18px;
     overflow-y: auto;
-    height: 298px;
-    transition: height 0.3s, padding 0.3s;
-
-    &--disabled {
-      height: 0;
-      padding: 0;
-      overflow: hidden;
-    }
+    border-top: 1px solid $grey;
+    max-height: 300px;
 
   }
 
-  &__list-item {
+  &__item {
     &:not(:last-child) {
-      margin-bottom: 11px;
+      margin-bottom: 13px;
     }
   }
 
-  &__list-link {
+  &__link {
     font-size: 18px;
     line-height: 1.3;
-  }
-
-  &__form-offer {
-    padding: 18px;
-    height: 130px;
-    transition: height 0.3s, padding 0.3s;
-
-    &--disabled {
-      height: 0;
-      padding: 0;
-      overflow: hidden;
-    }
-  }
-
-  &__form-brend {
-    padding: 18px;
-    height: 235px;
-    transition: height 0.3s, padding 0.3s;
-
-    &--disabled {
-      height: 0;
-      padding: 0;
-      overflow: hidden;
-    }
-  }
-
-  &__form-price {
-    padding: 18px;
-    height: 122px;
-    transition: height 0.3s, padding 0.3s;
-
-    &--disabled {
-      height: 0;
-      padding: 0;
-      overflow: hidden;
-    }
   }
 
   &__checkbox {
@@ -413,10 +421,6 @@
       background-color: $silver-100;
       border: 1px solid $grey;
       border-radius: 3px;
-
-      &:hover {
-        display: none;
-      }
     }
 
     &::after {
@@ -444,36 +448,43 @@
     outline: transparent;
 
     &:focus {
-      box-shadow: 0px 0px 0px 3px $green-200;
+      box-shadow: 0 0 0 3px $green-200;
     }
   }
 
   &__input-wrapper {
     position: relative;
-    padding: 0 16px 0 24px;
+    // padding: 0 16px 0 24px;
 
-    &::before,
-    &::after {
-      content: 'ОТ';
-      position: absolute;
-      display: block;
+    // &::before,
+    // &::after {
+    //   position: absolute;
+    //   display: block;
+    //   font-family: "Ruda", sans-serif;
+    //   font-size: 16px;
+    //   line-height: 1.2;
+    //   color: $silver-600;
+    // }
+
+    // &::before {
+    //   content: 'ОТ';
+    //   top: 13px;
+    //   left: 0;
+    // }
+
+    // &::after {
+    //   content: '₽';
+    //   top: 13px;
+    //   right: 0;
+    // }
+    span {
       font-family: "Ruda", sans-serif;
       font-size: 16px;
       line-height: 1.2;
       color: $silver-600;
     }
-
-    &::before {
-      top: 13px;
-      left: 0;
-    }
-
-    &::after {
-      content: '₽';
-      top: 13px;
-      right: 0;
-    }
   }
+
 }
 
 
@@ -486,20 +497,20 @@
 
 .irs--flat {
   .irs-line {
-    top: 35px;
+    top: 21px;
     height: 2px;
     background-color: $grey;
     border-radius: 0;
   }
 
   .irs-bar {
-    top: 35px;
+    top: 21px;
     height: 2px;
     background-color: $green-900;
   }
 
   .irs-handle {
-    top: 27px;
+    top: 13px;
     width: 18px;
     height: 18px;
     border-radius: 50%;
@@ -515,7 +526,7 @@
   .irs-single {
     display: none;
   }
-}
+}  
 
 
 
@@ -524,7 +535,7 @@
 }
 
 .focused .jq-selectbox__select {
-  box-shadow: 0px 0px 0px 3px $green-200;
+  box-shadow: 0 0 0 3px $green-200;
 }
 
 .jq-selectbox.opened {
@@ -545,6 +556,10 @@
   position: relative;
   cursor: pointer;
   z-index: 1;
+
+  select{
+    width:calc(100% - 15px);
+  }
 
   &__select {
     margin-right: 15px;
@@ -593,7 +608,7 @@
     background-color: $white;
     box-shadow: none;
     border: 1px solid $grey;
-    border-radius: 0 0 3px 3px;
+    border-radius: 0 0 6px 6px;
     font-family: "OpenSans", sans-serif;
     font-size: 14px;
     line-height: 1.2;
@@ -608,7 +623,7 @@
       padding: 15px 15px 15px 10px;
 
       @include media-3 {
-        padding: 5px 0px 5px 0px;
+        padding: 5px 0 5px 0;
       }
     }
   }

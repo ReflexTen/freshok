@@ -509,23 +509,7 @@
     padding: 26px 26px 26px 15px;
   }
 
-  &__btn {
-    &::after,
-    &::before {
-      content: '';
-      display: block;
-      width: 20px;
-      height: 2px;
-      background-color: $dark-900;
-      border-radius: 1px;
-      transform: rotate(45deg)
-    }
 
-    &::before {
-      content: '';
-      transform: translateY(2px) rotate(-45deg)
-    }
-  }
 
   &__user {
     background-color: $green-900;
@@ -679,3 +663,21 @@
     }
   }
 }
+
+.btn-closed {
+    &::after,
+    &::before {
+      content: '';
+      display: block;
+      width: 20px;
+      height: 2px;
+      background-color: $dark-900;
+      border-radius: 1px;
+      transform: rotate(45deg)
+    }
+
+    &::before {
+      content: '';
+      transform: translateY(2px) rotate(-45deg)
+    }
+  }

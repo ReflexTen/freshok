@@ -144,14 +144,13 @@ $(function () {
   $('.gallery__inner').slick({
     prevArrow: $('.gallery-arrow--prew'),
     nextArrow: $('.gallery-arrow--next'),
-    // responsive: [{
-    //   breakpoint: 769,
-    //   settings: {
-    //     prevArrow: false,
-    //     nextArrow: false,
-    //     dots: true
-    //   }
-    // }]
+    responsive: [{
+      breakpoint: 576,
+      settings: {
+        prevArrow: false,
+        nextArrow: false,
+      }
+    }]
   })
 
   $('.gallery-fullscreen__inner').slick({

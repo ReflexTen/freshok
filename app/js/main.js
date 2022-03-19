@@ -1,17 +1,4 @@
-// // import Swiper JS
-// import Swiper from 'swiper';
-// // import Swiper styles
-// import 'swiper/css';
-
-// const swiper = new Swiper('.swiper', {
-//   // Optional parameters
-//   direction: 'vertical',
-//   loop: true
-
-// });
-
 $(function () {
-
   $('.top-slider__wrapper').slick({
     prevArrow: '<button class="top-slider__arrow top-slider__arrow--prew" type="button"><span class="sr-only">Кнопка назад</span></button>',
     nextArrow: '<button class="top-slider__arrow top-slider__arrow--next" type="button"><span class="sr-only">Кнопка вперед</span></button>',
@@ -54,9 +41,6 @@ $(function () {
       }
     ]
   })
-
-
-
 
   $('.user-nav__link--search').on('click', function () {
     $('.form-search').toggleClass('form-search--active');
@@ -138,7 +122,6 @@ $(function () {
     };
   });
 
-
   //-------------------Product-page------------------------//
 
   $('.gallery__inner').slick({
@@ -147,8 +130,7 @@ $(function () {
     responsive: [{
       breakpoint: 576,
       settings: {
-        prevArrow: false,
-        nextArrow: false,
+        arrows: false,
       }
     }]
   })
@@ -157,15 +139,13 @@ $(function () {
     prevArrow: $('.gallery-arrow--fullscreen-prew'),
     nextArrow: $('.gallery-arrow--fullscreen-next'),
     dots: true,
-
-
   })
 
-    $('.gallery__inner').on('click', function () {
-      $('.gallery-fullscreen').fadeToggle()
-      $('.gallery-fullscreen__inner').slick('setPosition')
-      $('body').addClass('lock');
-    })
+  $('.gallery__inner').on('click', function () {
+    $('.gallery-fullscreen').fadeToggle()
+    $('.gallery-fullscreen__inner').slick('setPosition')
+    $('body').addClass('lock');
+  })
 
   $('.cross').on('click', function () {
     $('.gallery-fullscreen').fadeOut()
@@ -209,78 +189,30 @@ $(function () {
 
   $('.product-page__slider-inner').slick({
     slidesToShow: 4,
-    prevArrow: false,
-    nextArrow: false,
     prevArrow: $('.gallery-arrow--slider-prew'),
     nextArrow: $('.gallery-arrow--slider-next'),
-    // dots: true
+
+    responsive: [{
+        breakpoint: 768,
+        settings: {
+          arrows: false,
+          slidesToShow: 3,
+          dots: true,
+        }
+      },
+      {
+        breakpoint: 576,
+        settings: {
+          arrows: false,
+          slidesToShow: 2,
+          dots: true,
+          slidesToScroll: 2,
+        }
+      }
+    ]
+
 
   })
-
-  // new Swiper('.product-page__slider-box', {
-  //   speed: 400,
-  //   spaceBetween: 30,
-  //   slidesPerView: 4,
-  //   pagination: {
-  //     el: null,
-  //     clickable: true,
-  //   },
-
-  //   breakpoints: {
-  //     // when window width is >= 320px
-  //     1020: {
-  //       slidesPerView: 4,
-  //       spaceBetween: 30,
-  //       pagination: {
-  //         el: null,
-  //         clickable: true,
-  //       },
-
-
-  //     },
-
-  //     576: {
-  //       slidesPerView: 3,
-  //       spaceBetween: 30,
-
-  //       pagination: {
-  //         el: '.swiper-pagination',
-  //         clickable: true,
-  //       }
-  //     }
-  //   },
-
-  //   navigation: {
-  //     nextEl: '.swiper-button-next',
-  //     prevEl: '.swiper-button-prev',
-  //   },
-
-  // });
-
-
-
-  // new Swiper('.gallery-fullscreen__swiper', {
-  //   slidesPerView: 1,
-  //   speed: 2000,
-  //   centeredSlides: true,
-
-  //   pagination: {
-  //     el: '.gallery-fullscreen__pagination',
-  //     clickable: true,
-  //   },
-
-  //   navigation: {
-  //     nextEl: '.gallery-fullscreen__arrow--next',
-  //     prevEl: '.gallery-fullscreen__arrow--prew',
-  //   },
-  // });
-
-
-
-
-
-
-
 
   //-------------------------------------------------------//
 
@@ -295,10 +227,6 @@ $(function () {
 
   var mixer1 = mixitup(containerEl1, config);
   var mixer1 = mixitup(containerEl2, config);
-
-
-
 })
-
 
 //-------------------------------------------------------//
